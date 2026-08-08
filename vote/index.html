@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Голосование — Vienna Eurovision Roblox</title>
+<meta name="description" content="Голосование зрителей Vienna Eurovision Roblox — раунд 1.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise-overlay"></div>
+<div class="beam beam-a"></div>
+<div class="beam beam-b"></div>
+
+<header class="topbar">
+  <a href="../index.html" class="brand">
+    <span class="brand-city">Vienna</span>
+    <span class="brand-main">
+      EURO<span class="brand-heart">
+        <svg viewBox="0 0 100 90" class="heart-svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4C6FFF"/>
+              <stop offset="35%" stop-color="#FFD542"/>
+              <stop offset="70%" stop-color="#FF5A6E"/>
+              <stop offset="100%" stop-color="#B24CFF"/>
+            </linearGradient>
+          </defs>
+          <path d="M50 82 C20 60 2 40 2 22 C2 6 15 -2 28 4 C38 8 46 18 50 26 C54 18 62 8 72 4 C85 -2 98 6 98 22 C98 40 80 60 50 82 Z" fill="url(#heartGrad)"/>
+        </svg>
+      </span>VISION</span>
+    <span class="brand-sub">R<span class="brand-o">o</span>blox</span>
+  </a>
+  <div class="round-badge">Раунд 1 · Голосование открыто</div>
+</header>
+
+<main>
+
+  <section class="vhero">
+    <p class="eyebrow">Голосование зрителей</p>
+    <h1>Выберите страну и поставьте баллы</h1>
+    <p class="vhero-desc">Один голос с одного устройства/сети за раунд. Выберите понравившееся выступление, назначьте баллы от 1 до 10 и подтвердите капчей.</p>
+  </section>
+
+  <section class="entries" id="entries" aria-label="Участники раунда 1">
+    <div class="entries-grid" id="entriesGrid"></div>
+  </section>
+
+  <section class="vote-panel" id="votePanel">
+    <div class="panel-inner">
+
+      <div class="panel-row" id="selectedRow">
+        <span class="panel-label">Выбрано:</span>
+        <span class="panel-value" id="selectedValue">— выберите страну выше —</span>
+      </div>
+
+      <div class="panel-row points-row">
+        <span class="panel-label">Баллы:</span>
+        <div class="points-grid" id="pointsGrid">
+          <!-- 1..10 buttons injected -->
+        </div>
+      </div>
+
+      <div class="panel-row captcha-row">
+        <span class="panel-label">Проверка:</span>
+        <div class="captcha-box">
+          <span id="captchaQuestion" class="captcha-question">— =</span>
+          <input type="number" id="captchaInput" class="captcha-input" placeholder="?" inputmode="numeric" autocomplete="off">
+          <button type="button" id="captchaRefresh" class="captcha-refresh" aria-label="Обновить пример">↻</button>
+        </div>
+      </div>
+
+      <div class="panel-row">
+        <button type="button" id="submitVote" class="btn btn-primary btn-large" disabled>Отправить голос</button>
+        <p class="panel-error" id="panelError"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="vote-overlay" id="voteOverlay" hidden>
+    <div class="overlay-card">
+      <div class="overlay-heart">
+        <svg viewBox="0 0 100 90" class="heart-svg" aria-hidden="true">
+          <path d="M50 82 C20 60 2 40 2 22 C2 6 15 -2 28 4 C38 8 46 18 50 26 C54 18 62 8 72 4 C85 -2 98 6 98 22 C98 40 80 60 50 82 Z" fill="url(#heartGrad2)"/>
+          <defs>
+            <linearGradient id="heartGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4C6FFF"/>
+              <stop offset="35%" stop-color="#FFD542"/>
+              <stop offset="70%" stop-color="#FF5A6E"/>
+              <stop offset="100%" stop-color="#B24CFF"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h2>Голос учтён!</h2>
+      <p id="overlayText">Спасибо, что голосуете за <strong id="overlayCountry">—</strong>.</p>
+      <p class="overlay-note">Новое голосование откроется в следующем раунде.</p>
+      <a href="../index.html" class="btn btn-ghost">На главную</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">Vienna Eurovision <span class="footer-dot">·</span> Roblox</div>
+  <p class="footer-note">Фан-проект. Не связан с официальным конкурсом Евровидение или EBU. Фото исполнителей — Corinne Cumming / eurovision.tv, используются в иллюстративных целях.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
